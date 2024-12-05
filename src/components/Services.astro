@@ -1,0 +1,67 @@
+---
+import Container from "./Container.astro"
+import Topic from "./Topic.astro";
+import servicesData from './Data/services.json';
+import Calender from "./icons/Calender.astro";
+---
+<Container>
+    <div class="py-20" id="services">
+        <Topic 
+            title="MVP Journey" 
+            description="From concept to launch, we guide you through every step of building your Minimum Viable Product"
+        />
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
+            {
+                servicesData.map(({ background, name1, name2, arrow, link, image },index) => {
+                    const isRedBackground = background.includes('bg-red-500');
+                    const nameBgClass = isRedBackground ? 'bg-white' : 'bg-red-500';
+                    const nameTextClass = isRedBackground ? 'text-red-500' : '';
+                    
+                    return (
+                    <div class={background}>
+                        <div class="flex justify-between items-center w-full">
+                            <div class="space-y-4">
+                                <div class="space-y-2">
+                                    <div class={`px-3 py-1 ${nameBgClass} rounded-lg inline-block`}>
+                                        <span class={`text-2xl font-medium ${nameTextClass}`}>{name1}</span>
+                                    </div>
+                                    <div class={`px-3 py-1 ${nameBgClass} rounded-lg inline-block`}>
+                                        <span class={`text-2xl font-medium ${nameTextClass}`}>{name2}</span>
+                                    </div>
+                                </div>
+                                <a class="flex items-center gap-3 mt-8 group" href={link}>
+                                    <div class="w-10 h-10 flex items-center justify-center rounded-full border border-current group-hover:bg-current font-bold">
+                                       {/* {index+1} */}
+                                        <img class="w-5 h-5 group-hover:invert" src={arrow} alt="arrow" />
+                                    </div>
+                                    <span class="text-xl font-medium group-hover:underline">Learn more</span>
+                                </a>
+                            </div>
+                            <div class="w-[180px] h-[140px] items-center justify-center hidden md:flex">
+                                <img class="w-full h-auto" src={image} alt={`${name1} ${name2}`} />
+                            </div>
+                        </div>
+                    </div>
+                    )
+                })
+            }
+        </div>
+
+        <div class="mt-16 p-14 bg-zinc-100 rounded-[45px]">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="space-y-6">
+                    <h3 class="text-3xl font-medium">Ready to turn your idea into a MVP?</h3>
+                    <p class="text-lg">Let's turn your innovative idea into a market-ready product. Our experienced team will help you validate, build, and launch your MVP efficiently.</p>
+                    <a href="https://cal.com/kesavsaini/mvp-call" class="inline-flex px-8 py-4 bg-zinc-900 hover:bg-white text-white hover:text-black border border-zinc-900 rounded-xl text-lg font-medium transition-colors duration-200 gap-2"> 
+                        <Calender/>
+                        Shcedule a call
+                    </a>
+                </div>
+                <div class="hidden md:flex justify-center">
+                    <img src="/readyToBuild.svg" class="w-2/3 h-full" alt="MVP Development Illustration"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</Container>
