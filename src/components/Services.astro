@@ -3,6 +3,9 @@ import Container from "./Container.astro"
 import Topic from "./Topic.astro";
 import servicesData from './Data/services.json';
 import Calender from "./icons/Calender.astro";
+import Call from "./icons/Call.astro"
+import { Image } from 'astro:assets';
+import ReadyToBuild from '../assets/readyToBuild.svg';
 ---
 <Container>
     <div class="py-20" id="services">
@@ -59,7 +62,7 @@ import Calender from "./icons/Calender.astro";
                     </a>
                 </div>
                 <div class="hidden md:flex justify-center">
-                    <img src="../../public/readyToBuild.svg" class="w-2/3 h-full" alt="MVP Development Illustration"/>
+                    <Image src={ReadyToBuild} alt="MVP Development Illustration" class="w-2/3 h-full" />
                 </div>
             </div>
         </div>

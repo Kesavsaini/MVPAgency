@@ -1,6 +1,8 @@
 ---
 import Container from "./Container.astro"
 import Call from "./icons/Call.astro"
+import { Image } from 'astro:assets';
+import HeroImg from '../assets/HeroImg.svg';
 ---
 <Container>
 <div class="relative flex flex-col-reverse items-center md:flex-row" id="hero">
@@ -16,30 +18,7 @@ import Call from "./icons/Call.astro"
         </div>
     </div>
     <div class="flex items-center py-5 md:w-6/12 md:pb-20 md:pt-10">
-        <img src={'../../public/HeroImg.svg'} width="100%" alt="Hero"/>
+        <Image src={HeroImg} alt="Hero" class="w-full" />
     </div>
-</div>
-
-<!-- <div class="flex-row items-center">
-    <div class="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-6">
-        <div class="p-4 grayscale transition duration-200 hover:grayscale-0">
-            <img src="https://placehold.co/120x48" class="h-12 w-auto mx-auto" loading="lazy" alt="client logo" width="" height="" />
-        </div>
-        <div class="p-4 grayscale transition duration-200 hover:grayscale-0">
-            <img src="https://placehold.co/120x48" class="h-12 w-auto mx-auto" loading="lazy" alt="client logo" width="" height="" />
-        </div>
-        <div class="p-4 flex grayscale transition duration-200 hover:grayscale-0">
-            <img src="https://placehold.co/120x36" class="h-9 w-auto m-auto" loading="lazy" alt="client logo" width="" height="" />
-        </div>
-        <div class="p-4 grayscale transition duration-200 hover:grayscale-0">
-            <img src="https://placehold.co/120x48" class="h-12 w-auto mx-auto" loading="lazy" alt="client logo" width="" height="" />
-        </div>
-        <div class="p-4 flex grayscale transition duration-200 hover:grayscale-0">
-            <img src="https://placehold.co/120x32" class="h-8 w-auto m-auto" loading="lazy" alt="client logo" width="" height="" />
-        </div>
-        <div class="p-4 grayscale transition duration-200 hover:grayscale-0">
-            <img src="https://placehold.co/120x48" class="h-12 w-auto mx-auto" loading="lazy" alt="client logo" width="" height="" />
-        </div>
-    </div> -->
 </div>
 </Container>

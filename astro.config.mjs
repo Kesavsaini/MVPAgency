@@ -6,5 +6,8 @@ import tailwind from '@astrojs/tailwind';
 export default defineConfig({
   site: 'https://kesavsaini.github.io',
   base: '/MVPAgency',
-  integrations: [tailwind()]
+  integrations: [tailwind()],
+  image: {
+    service: { entrypoint: 'astro/assets/services/sharp' },
+  }
 });
