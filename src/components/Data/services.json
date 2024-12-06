@@ -5,7 +5,7 @@
         "name2": "Planning",
         "background": "h-[310px] p-12 bg-zinc-100 rounded-[45px] shadow-card border border-black justify-between items-center flex text-black",
         "arrow": "./services/ag.svg",
-        "link": "/services#mvp-strategy",
+        "link": "/MVPAgency/services#mvp-strategy",
         "image": "./services/01.svg"
     },
     {
@@ -14,7 +14,7 @@
         "name2": "Prototyping",
         "background": "h-[310px] p-12 bg-red-500 rounded-[45px] shadow-card border border-black justify-between items-center flex text-black",
         "arrow": "./services/ag.svg",
-        "link": "/services#rapid-prototyping",
+        "link": "/MVPAgency/services#rapid-prototyping",
         "image": "./services/02.svg"
     },
     {
@@ -23,7 +23,7 @@
         "name2": "Development",
         "background": "h-[310px] p-12 bg-black rounded-[45px] shadow-card border border-black justify-between items-center flex text-white",
         "arrow": "./services/aw.svg",
-        "link": "/services#agile-development",
+        "link": "/MVPAgency/services#agile-development",
         "image": "./services/03.svg"
     },
     {
@@ -32,7 +32,7 @@
         "name2": "Validation",
         "background": "h-[310px] p-12 bg-zinc-100 rounded-[45px] shadow-card border border-black justify-between items-center flex text-black",
         "arrow": "./services/ag.svg",
-        "link": "/services#user-testing",
+        "link": "/MVPAgency/services#user-testing",
         "image": "./services/04.svg"
     },
     {
@@ -41,7 +41,7 @@
         "name2": "Launch",
         "background": "h-[310px] p-12 bg-red-500 rounded-[45px] shadow-card border border-black justify-between items-center flex text-black",
         "arrow": "./services/ag.svg",
-        "link": "/services#market-launch",
+        "link": "/MVPAgency/services#market-launch",
         "image": "./services/05.svg"
     },
     {
@@ -50,7 +50,7 @@
         "name2": "Scaling",
         "background": "h-[310px] p-12 bg-black rounded-[45px] shadow-card border border-black justify-between items-center flex text-white",
         "arrow": "./services/aw.svg",
-        "link": "/services#iteration-scaling",
+        "link": "/MVPAgency/services#iteration-scaling",
         "image": "./services/06.svg"
     }
 ]
