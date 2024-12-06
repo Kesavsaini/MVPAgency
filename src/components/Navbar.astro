@@ -1,0 +1,110 @@
+---
+import Container from "./Container.astro";
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1); // remove the first "/"
+---
+
+<div class="fixed w-full z-50 flex justify-center top-6">
+    <header class="bg-white/90 backdrop-blur-md shadow-lg rounded-full px-8 py-4 border border-zinc-100 max-w-3xl mx-4 w-full">
+        <nav class="flex justify-between items-center">
+            <a href="/MVPAgency" class="text-xl font-bold text-black">
+                MVP<span class="text-red-500">Agency</span>
+            </a>
+
+            <div class="hidden md:flex items-center gap-6">
+                <a 
+                    href="/MVPAgency" 
+                    class={`text-sm hover:text-red-500 transition-colors ${currentPath === "MVPAgency" ? "text-red-500" : "text-zinc-600"}`}
+                >
+                    Home
+                </a>
+                <a 
+                    href="/MVPAgency/services" 
+                    class={`text-sm hover:text-red-500 transition-colors ${currentPath === "MVPAgency/services" ? "text-red-500" : "text-zinc-600"}`}
+                >
+                    Process
+                </a>
+                {currentPath === "MVPAgency" ? (
+                    <a 
+                        href="#pricing" 
+                        class="text-sm hover:text-red-500 transition-colors text-zinc-600 cursor-pointer"
+                    >
+                        Pricing
+                    </a>
+                ) : (
+                    <a 
+                        href="/MVPAgency#pricing" 
+                        class="text-sm hover:text-red-500 transition-colors text-zinc-600"
+                    >
+                        Pricing
+                    </a>
+                )}
+                <a 
+                    href="https://mail.google.com/mail/?view=cm&fs=1&to=kromansaini@gmail.com&su=MVP Development Inquiry&body=Hi, I'm interested in discussing my MVP project."
+                    onclick="if(!navigator.onLine) { window.location.href='mailto:kromansaini@gmail.com?subject=MVP Development Inquiry&body=Hi, I'm interested in discussing my MVP project.'; return false; }"
+                    target="_blank"
+                    class="px-4 py-2 bg-red-500 text-white text-sm rounded-full hover:bg-red-600 transition-colors inline-flex items-center gap-2"
+                >
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                    </svg>
+                    Email Us
+                </a>
+            </div>
+
+            <button class="md:hidden text-black" id="menu-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="md:hidden hidden absolute top-20 left-4 right-4" id="mobile-menu">
+        <div class="flex flex-col items-center gap-4 py-6 px-4 bg-white/90 backdrop-blur-md rounded-3xl shadow-lg border border-zinc-100">
+            <a href="/MVPAgency" class={`text-sm ${currentPath === "MVPAgency" ? "text-red-500" : "text-zinc-600"}`}>Home</a>
+            <a href="/MVPAgency/services" class={`text-sm ${currentPath === "MVPAgency/services" ? "text-red-500" : "text-zinc-600"}`}>Process</a>
+            {currentPath === "MVPAgency" ? (
+                <a href="#pricing" class="text-sm text-zinc-600">Pricing</a>
+            ) : (
+                <a href="/MVPAgency#pricing" class="text-sm text-zinc-600">Pricing</a>
+            )}
+            <a 
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=kromansaini@gmail.com&su=MVP Development Inquiry&body=Hi, I'm interested in discussing my MVP project."
+                onclick="if(!navigator.onLine) { window.location.href='mailto:kromansaini@gmail.com?subject=MVP Development Inquiry&body=Hi, I'm interested in discussing my MVP project.'; return false; }"
+                target="_blank"
+                class="px-4 py-2 bg-red-500 text-white text-sm rounded-full w-full text-center inline-flex items-center justify-center gap-2"
+            >
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                </svg>
+                Email Us
+            </a>
+        </div>
+    </div>
+</div>
+
+<script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    // Toggle mobile menu
+    menuToggle?.addEventListener('click', () => {
+        mobileMenu?.classList.toggle('hidden');
+    });
+
+    // Smooth scroll for pricing link when on home page
+    document.addEventListener('DOMContentLoaded', () => {
+        const pricingLinks = document.querySelectorAll('a[href="#pricing"]');
+        pricingLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const pricingSection = document.getElementById('pricing');
+                if (pricingSection) {
+                    pricingSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    });
+</script>
